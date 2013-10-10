@@ -7,7 +7,7 @@ library ieee ;
 entity initialPermutation is
   port (
 	plain : IN STD_LOGIC_VECTOR(63 DOWNTO 0);
-	permutated : OUT STD_LOGIC_VECTOR(63 DOWNTO 0);
+	permutated : OUT STD_LOGIC_VECTOR(63 DOWNTO 0)
   );
 end entity ; -- initialPermutation
 
@@ -21,7 +21,7 @@ begin
     permutated(4)<=plain(25);
     permutated(5)<=plain(17);
     permutated(6)<=plain(9);
-    permutated(7)<=plain(1);
+    permutated(7)<=plain(1);                                      
 
     permutated(8)<=plain(59);
     permutated(9)<=plain(51);
@@ -81,7 +81,7 @@ begin
     permutated(57)<=plain(54);
     permutated(58)<=plain(46);
     permutated(59)<=plain(38);
-    permutated(50)<=plain(30);
+    permutated(60)<=plain(30);
     permutated(61)<=plain(22);
     permutated(62)<=plain(14);
     permutated(63)<=plain(6);
