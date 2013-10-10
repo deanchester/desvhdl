@@ -5,7 +5,7 @@ library ieee ;
 entity eFunction is
   port (
 	eIN : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-	eOUT : OUT STD_LOGIC_VECTOR(47 DOWNTO 0);
+	eOUT : OUT STD_LOGIC_VECTOR(47 DOWNTO 0)
   ) ;
 end entity ; -- eFunction
 
