@@ -11,7 +11,7 @@ entity feistelFunction is
 end entity ; -- 
 
 architecture arch of feistelFunction is
-	component XORBIT48 is: 
+	component XORBIT48 is
 		port (
 			R : IN STD_LOGIC_VECTOR(47 DOWNTO 0);
 			Key : IN STD_LOGIC_VECTOR(47 DOWNTO 0);
