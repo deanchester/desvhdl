@@ -21,7 +21,7 @@ begin
     permutated(4)<=plain(25);
     permutated(5)<=plain(17);
     permutated(6)<=plain(9);
-    permutated(7)<=plain(1);                                      
+    permutated(7)<=plain(1);
 
     permutated(8)<=plain(59);
     permutated(9)<=plain(51);
@@ -53,7 +53,7 @@ begin
     permutated(32)<=plain(56);
     permutated(33)<=plain(48);
     permutated(34)<=plain(40);
-    permutated(35)<=plain(34);
+    permutated(35)<=plain(32);
     permutated(36)<=plain(24);
     permutated(37)<=plain(16);
     permutated(38)<=plain(8);
@@ -73,7 +73,7 @@ begin
     permutated(50)<=plain(44);
     permutated(51)<=plain(36);
     permutated(52)<=plain(28);
-    permutated(53)<=plain(22);
+    permutated(53)<=plain(20);
     permutated(54)<=plain(12);
     permutated(55)<=plain(4);
 
