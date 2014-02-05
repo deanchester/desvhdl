@@ -12,7 +12,8 @@ end entity ; -- S3Box
 architecture arch of S3Box is
 
 begin
-	begin process
+	process(sIN)
+	begin
 		case sIN is: 
 			when STD_LOGIC_VECTOR(to_unsigned(0,6)) => sOUT <= STD_LOGIC_VECTOR(to_unsigned(10, 4));
 			when STD_LOGIC_VECTOR(to_unsigned(1,6)) => sOUT <= STD_LOGIC_VECTOR(to_unsigned(13, 4));
