@@ -12,7 +12,8 @@ end entity ; -- S6Box
 architecture arch of S6Box is
 
 begin
-	begin process
+	process(sIN)
+	begin
 		case sIN is: 
 			when STD_LOGIC_VECTOR(to_unsigned(0,6)) => sOUT <= STD_LOGIC_VECTOR(to_unsigned(12, 4));
 			when STD_LOGIC_VECTOR(to_unsigned(1,6)) => sOUT <= STD_LOGIC_VECTOR(to_unsigned(10, 4));
