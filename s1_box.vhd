@@ -12,7 +12,7 @@ end entity ; -- S1Box
 architecture arch of S1Box is
 
 begin
-	when sIN is: 
+	case sIN is: 
 		when to_unsigned(0,6) => sOUT <= to_unsigned(14, 4);
 		when to_unsigned(1,6) => sOUT <= to_unsigned(0, 4);
 		when to_unsigned(2,6) => sOUT <= to_unsigned(4, 4);
