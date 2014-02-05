@@ -22,56 +22,56 @@ architecture arch of feistelFunction is
 	component s8_box is
 		port (
 			sIN: IN std_logic_VECTOR(5 downto 0);
-			sOUT: OUT std_logic_VECTOR(3 downto 0))
+			sOUT: OUT std_logic_VECTOR(3 downto 0)
 		) ;
 	end component;
 	
 	component s7_box is
 		port (
 			sIN: IN std_logic_VECTOR(5 downto 0);
-			sOUT: OUT std_logic_VECTOR(3 downto 0))
+			sOUT: OUT std_logic_VECTOR(3 downto 0)
 		) ;
 	end component;
 	
 	component s6_box is
 		port (
 			sIN: IN std_logic_VECTOR(5 downto 0);
-			sOUT: OUT std_logic_VECTOR(3 downto 0))
+			sOUT: OUT std_logic_VECTOR(3 downto 0)
 		) ;
 	end component;
 	
 	component s5_box is
 		port (
 			sIN: IN std_logic_VECTOR(5 downto 0);
-			sOUT: OUT std_logic_VECTOR(3 downto 0))
+			sOUT: OUT std_logic_VECTOR(3 downto 0)
 		) ;
 	end component;
 	
 	component s4_box is
 		port (
 			sIN: IN std_logic_VECTOR(5 downto 0);
-			sOUT: OUT std_logic_VECTOR(3 downto 0))
+			sOUT: OUT std_logic_VECTOR(3 downto 0)
 		) ;
 	end component;
 	
 	component s3_box is
 		port (
 			sIN: IN std_logic_VECTOR(5 downto 0);
-			sOUT: OUT std_logic_VECTOR(3 downto 0))
+			sOUT: OUT std_logic_VECTOR(3 downto 0)
 		) ;
 	end component;
 	
 	component s2_box is
 		port (
 			sIN: IN std_logic_VECTOR(5 downto 0);
-			sOUT: OUT std_logic_VECTOR(3 downto 0))
+			sOUT: OUT std_logic_VECTOR(3 downto 0)
 		) ;
 	end component;
 
 	component s1_box is
 		port (
 			sIN: IN std_logic_VECTOR(5 downto 0);
-			sOUT: OUT std_logic_VECTOR(3 downto 0))
+			sOUT: OUT std_logic_VECTOR(3 downto 0)
 		) ;
 	end component;
 	
