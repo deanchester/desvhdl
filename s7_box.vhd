@@ -5,7 +5,7 @@ library ieee ;
 entity S7Box is
   port (
   	sIN: IN std_logic_VECTOR(5 downto 0);
-  	sOUT: OUT std_logic_VECTOR(3 downto 0))
+  	sOUT: OUT std_logic_VECTOR(3 downto 0)
   ) ;
 end entity ; -- S7Box
 
