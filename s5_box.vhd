@@ -12,7 +12,8 @@ end entity ; -- S5Box
 architecture arch of S5Box is
 
 begin
-	begin process
+	process(sIN)
+	begin
 		case sIN is: 
 			when STD_LOGIC_VECTOR(to_unsigned(0,6)) => sOUT <= STD_LOGIC_VECTOR(to_unsigned(2, 4));
 			when STD_LOGIC_VECTOR(to_unsigned(1,6)) => sOUT <= STD_LOGIC_VECTOR(to_unsigned(14, 4));
