@@ -12,8 +12,9 @@ end entity ; -- S8Box
 architecture arch of S8Box is
 
 begin
-	begin process
-	case sIN is: 
+	process(sIN)
+	begin
+		case sIN is: 
 			when STD_LOGIC_VECTOR(to_unsigned(0,6)) => sOUT <= STD_LOGIC_VECTOR(to_unsigned(13, 4));
 			when STD_LOGIC_VECTOR(to_unsigned(1,6)) => sOUT <= STD_LOGIC_VECTOR(to_unsigned(1, 4));
 			when STD_LOGIC_VECTOR(to_unsigned(2,6)) => sOUT <= STD_LOGIC_VECTOR(to_unsigned(2, 4));
