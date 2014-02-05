@@ -14,7 +14,7 @@ architecture arch of S1Box is
 begin
 	process(sIN)
 	begin
-		case sIN is: 
+		case sIN is
 			when STD_LOGIC_VECTOR(to_unsigned(0,6)) => sOUT <= STD_LOGIC_VECTOR(to_unsigned(14, 4));
 			when STD_LOGIC_VECTOR(to_unsigned(1,6)) => sOUT <= STD_LOGIC_VECTOR(to_unsigned(0, 4));
 			when STD_LOGIC_VECTOR(to_unsigned(2,6)) => sOUT <= STD_LOGIC_VECTOR(to_unsigned(4, 4));
