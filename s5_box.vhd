@@ -2,14 +2,14 @@ library ieee ;
 	use ieee.std_logic_1164.all ;
 	use ieee.numeric_std.all ;
 
-entity S4Box is
+entity S5Box is
   port (
   	sIN: IN std_logic_VECTOR(5 downto 0);
   	sOUT: OUT std_logic_VECTOR(3 downto 0)
   ) ;
-end entity ; -- S4Box
+end entity ; -- S5Box
 
-architecture arch of S4Box is
+architecture arch of S5Box is
 
 begin
 	begin process
