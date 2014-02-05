@@ -87,7 +87,7 @@ architecture arch of feistelFunction is
 			permIN : IN STD_LOGIC_VECTOR(31 DOWNTO 0);	
 			permOUT : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
 		) ;
-	end
+	end component;
 	begin
 	
 	signal e, xorOUT : std_LOGIC_VECTOR(47 DOWNTO 0);
