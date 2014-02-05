@@ -12,7 +12,7 @@ end entity ; -- S2Box
 architecture arch of S2Box is
 
 begin
-	when sIN is:
+	case sIN is:
 		when to_unsigned(0,6) => sOUT <= to_unsigned(15, 4);
 		when to_unsigned(1,6) => sOUT <= to_unsigned(3, 4);
 		when to_unsigned(2,6) => sOUT <= to_unsigned(1, 4);
