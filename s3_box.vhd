@@ -12,7 +12,7 @@ end entity ; -- S3Box
 architecture arch of S3Box is
 
 begin
-	when sIN is: 
+	case sIN is: 
 		when to_unsigned(0,6) => sOUT <= to_unsigned(10, 4);
 		when to_unsigned(1,6) => sOUT <= to_unsigned(13, 4);
 		when to_unsigned(2,6) => sOUT <= to_unsigned(0, 4);
