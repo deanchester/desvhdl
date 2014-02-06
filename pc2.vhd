@@ -6,7 +6,7 @@ entity pc2 is
   port (
 	C : IN STD_LOGIC_VECTOR(27 DOWNTO 0);
 	D : IN STD_LOGIC_VECTOR(27 DOWNTO 0);
-	K : OUT STD_LOGIC_VECTOR(47 DOWNTO 0);
+	K : OUT STD_LOGIC_VECTOR(47 DOWNTO 0)
   ) ;
 end entity ; -- pc2
 
