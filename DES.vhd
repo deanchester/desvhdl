@@ -83,6 +83,9 @@ architecture arch of DES is
 		permutated : OUT STD_LOGIC_VECTOR(63 DOWNTO 0)
 	  );
 	end COMPONENT;
+	
+	signal left, right : STD_LOGIC_VECTOR(31 DOWNTO 0);
+	signal leftResult, rightResult : STD_LOGIC_VECTOR(31 DOWNTO 0);
 begin
 
 end architecture ; -- arch
