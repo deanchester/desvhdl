@@ -113,15 +113,16 @@ begin
 	right1 <= permOut(63 DOWNTO 32);
 	
 	-- Load reg with left and right. 
-	regLeft1 : PIPOShift32 PORT MAP(left1, leftRegOut1)
-	f1 : feistelFunction PORT MAP(right1, key1Out, feistelResult1);
-	leftResult1 <= right1; 
-	xor1 : XORBit32(left1, feistelResult1, rightResult1);
+	regLeft1 : PIPOShift32 PORT MAP(left1, leftRegOut1);
+	regRight1 : PIPOShift32 PORT MAP(right1, rightRegOut1);
+	f1 : feistelFunction PORT MAP(rightRegOut1, key1Out, feistelResult1);
+	leftResult1 <= rightRegOut1; 
+	xor1 : XORBit32(leftRegOut1, feistelResult1, rightResult1);
 	
-	
-	
+	regLeft2 : PIPOShift32 PORT MAP(leftResult1, leftRegOut1);
+	regRight2 : PIPOShift32 PORT MAP(rightResult1, rightRegOut1);
 	f2 : feistelFunction PORT MAP(right2, key2Out, feistelResult2);
 	leftResult2 <= right2; 
-	xor2 : XORBit32(left1, feistelResult1, rightResult2);
+	xor2 : XORBit32(leftRegOut2, feistelResult2, rightResult3);
 
 end architecture ; -- arch
