@@ -117,7 +117,7 @@ architecture arch of DES is
 		feistelResult9, feistelResult10, feistelResult11, feistelResult12, 
 		feistelResult13, feistelResult14, feistelResult15, feistelResult16,
 		feistelResult17 : STD_LOGIC_VECTOR(31 DOWNTO 0);
-	signal combined, permOut : STD_LOGIC_VECTOR(63 DOWNTO 0);
+	signal combined, permOut, inverseIn, inverseOut : STD_LOGIC_VECTOR(63 DOWNTO 0);
 begin
 	combined(7 DOWNTO 0) <= plainTextB1;
 	combined(15 DOWNTO 8) <= plainTextB2;
@@ -230,5 +230,6 @@ begin
 	leftResult16 <= right16; 
 	xor16 : XORBit32 PORT MAP (leftRegOut16, feistelResult16, rightResult16);
 	
-	regFinalLeft : PIPOShift32 PORT MAP(leftResult16, )
+	regFinalLeft : PIPOShift32 PORT MAP(leftResult16, inverseIn(31 DOWNTO 0));
+	regFinalRight : PIPOShift32 PORT MAP(rightResult16, inverseIn(63 DOWNTO 31));
 end architecture ; -- arch
