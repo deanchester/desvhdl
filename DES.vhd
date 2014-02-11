@@ -92,8 +92,10 @@ architecture arch of DES is
 	  );
 	end COMPONENT;
 	
-	signal left, right : STD_LOGIC_VECTOR(31 DOWNTO 0);
-	signal leftResult, rightResult : STD_LOGIC_VECTOR(31 DOWNTO 0);
+	signal left1, right1, left2, right2 : STD_LOGIC_VECTOR(31 DOWNTO 0);
+	signal leftResult1, rightResult1, leftResult2, rightResult2 : STD_LOGIC_VECTOR(31 DOWNTO 0);
+	signal leftRegOut1, rightRegOut1 : STD_LOGIC_VECTOR(31 DOWNTO 0);
+	signal feistelResult1 : STD_LOGIC_VECTOR(31 DOWNTO 0);
 	signal combined, permOut : STD_LOGIC_VECTOR(63 DOWNTO 0);
 begin
 	combined(7 DOWNTO 0) <= plainTextB1;
@@ -107,7 +109,19 @@ begin
 	
 	perm : initialPermutation PORT MAP(combined, permOut);
 	
-	left <= permOut(31 DOWNTO 0);
-	right = permOut(63 DOWNTO 32);
+	left1 <= permOut(31 DOWNTO 0);
+	right1 <= permOut(63 DOWNTO 32);
+	
+	-- Load reg with left and right. 
+	regLeft1 : PIPOShift32 PORT MAP(left1, leftRegOut1)
+	f1 : feistelFunction PORT MAP(right1, key1Out, feistelResult1);
+	leftResult1 <= right1; 
+	xor1 : XORBit32(left1, feistelResult1, rightResult1);
+	
+	
+	
+	f2 : feistelFunction PORT MAP(right2, key2Out, feistelResult2);
+	leftResult2 <= right2; 
+	xor2 : XORBit32(left1, feistelResult1, rightResult2);
 
 end architecture ; -- arch
