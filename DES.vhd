@@ -14,14 +14,22 @@ entity DES is
 	plainTextB7 : in STD_LOGIC_VECTOR(7 DOWNTO 0);
 	plainTextB8 : in STD_LOGIC_VECTOR(7 DOWNTO 0);
 	
-	keyB1 : in STD_LOGIC_VECTOR(7 DOWNTO 0);
-	keyB2 : in STD_LOGIC_VECTOR(7 DOWNTO 0);
-	keyB3 : in STD_LOGIC_VECTOR(7 DOWNTO 0);
-	keyB4 : in STD_LOGIC_VECTOR(7 DOWNTO 0);
-	keyB5 : in STD_LOGIC_VECTOR(7 DOWNTO 0);
-	keyB6 : in STD_LOGIC_VECTOR(7 DOWNTO 0);
-	keyB7 : in STD_LOGIC_VECTOR(7 DOWNTO 0);
-	keyB8 : in STD_LOGIC_VECTOR(7 DOWNTO 0);
+  	key1Out : OUT STD_LOGIC_VECTOR(47 DOWNTO 0);
+  	key2Out : OUT STD_LOGIC_VECTOR(47 DOWNTO 0);
+  	key3Out : OUT STD_LOGIC_VECTOR(47 DOWNTO 0);
+  	key4Out : OUT STD_LOGIC_VECTOR(47 DOWNTO 0);
+  	key5Out : OUT STD_LOGIC_VECTOR(47 DOWNTO 0);
+  	key6Out : OUT STD_LOGIC_VECTOR(47 DOWNTO 0);
+  	key7Out : OUT STD_LOGIC_VECTOR(47 DOWNTO 0);
+  	key8Out : OUT STD_LOGIC_VECTOR(47 DOWNTO 0);
+  	key9Out : OUT STD_LOGIC_VECTOR(47 DOWNTO 0);
+  	key10Out : OUT STD_LOGIC_VECTOR(47 DOWNTO 0);
+  	key11out : OUT STD_LOGIC_VECTOR(47 DOWNTO 0);
+  	key12Out : OUT STD_LOGIC_VECTOR(47 DOWNTO 0);
+  	key13Out : OUT STD_LOGIC_VECTOR(47 DOWNTO 0);
+  	key14Out : OUT STD_LOGIC_VECTOR(47 DOWNTO 0);
+  	key15Out : OUT STD_LOGIC_VECTOR(47 DOWNTO 0);
+  	key16Out : OUT STD_LOGIC_VECTOR(47 DOWNTO 0);
 	
 	cipherTextB1 : out STD_LOGIC_VECTOR(7 DOWNTO 0);
 	cipherTextB2 : out STD_LOGIC_VECTOR(7 DOWNTO 0);
@@ -86,7 +94,7 @@ architecture arch of DES is
 	
 	signal left, right : STD_LOGIC_VECTOR(31 DOWNTO 0);
 	signal leftResult, rightResult : STD_LOGIC_VECTOR(31 DOWNTO 0);
-	signal combined : STD_LOGIC_VECTOR(63 DOWNTO 0);
+	signal combined, permOut : STD_LOGIC_VECTOR(63 DOWNTO 0);
 begin
 	combined(7 DOWNTO 0) <= plainTextB1;
 	combined(15 DOWNTO 8) <= plainTextB2;
@@ -97,6 +105,9 @@ begin
 	combined(55 DOWNTO 48) <= plainTextB7;
 	combined(63 DOWNTO 56) <= plainTextB8;
 	
-	perm : initialPermutation PORT MAP()
+	perm : initialPermutation PORT MAP(combined, permOut);
+	
+	left <= permOut(31 DOWNTO 0);
+	right = permOut(63 DOWNTO 32);
 
 end architecture ; -- arch
