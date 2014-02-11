@@ -86,6 +86,17 @@ architecture arch of DES is
 	
 	signal left, right : STD_LOGIC_VECTOR(31 DOWNTO 0);
 	signal leftResult, rightResult : STD_LOGIC_VECTOR(31 DOWNTO 0);
+	signal combined : STD_LOGIC_VECTOR(63 DOWNTO 0);
 begin
+	combined(7 DOWNTO 0) <= plainTextB1;
+	combined(15 DOWNTO 8) <= plainTextB2;
+	combined(23 DOWNTO 16) <= plainTextB3;
+	combined(31 DOWNTO 24) <= plainTextB4;
+	combined(39 DOWNTO 32) <= plainTextB5;
+	combined(47 DOWNTO 40) <= plainTextB6;
+	combined(55 DOWNTO 48) <= plainTextB7;
+	combined(63 DOWNTO 56) <= plainTextB8;
+	
+	perm : initialPermutation PORT MAP()
 
 end architecture ; -- arch
