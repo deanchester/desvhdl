@@ -37,7 +37,52 @@ entity DES is
 end entity ; -- DES
 
 architecture arch of DES is
+	COMPONENT PIPOShift32 is
+		port (
+			clock : IN STD_LOGIC;
+			dataIN : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+			dataOUT : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+			) ;
+	end COMPONENT;
 
+
+	COMPONENT PIPOShift48 is
+		port (
+			clock : IN STD_LOGIC;
+			dataIN : IN STD_LOGIC_VECTOR(47 DOWNTO 0);
+			dataOUT : OUT STD_LOGIC_VECTOR(47 DOWNTO 0);
+			) ;
+	end COMPONENT;
+	
+	COMPONENT feistelFunction is
+		port (
+			fIn : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+			K : IN STD_LOGIC_VECTOR(47 DOWNTO 0);
+			fOut : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
+		) ;
+	end COMPONENT;
+	
+	COMPONENT initialPermutation is
+	  port (
+		plain : IN STD_LOGIC_VECTOR(63 DOWNTO 0);
+		permutated : OUT STD_LOGIC_VECTOR(63 DOWNTO 0)
+	  );
+	end COMPONENT;
+	
+	COMPONENT XORBit32 is
+		port (
+			R : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+			Key : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+			RES : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
+		) ;
+	end COMPONENT;
+	
+	COMPONENT inversePermutation is
+	  port (
+		plain : IN STD_LOGIC_VECTOR(63 DOWNTO 0);
+		permutated : OUT STD_LOGIC_VECTOR(63 DOWNTO 0)
+	  );
+	end COMPONENT;
 begin
 
 end architecture ; -- arch
