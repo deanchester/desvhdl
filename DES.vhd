@@ -140,95 +140,95 @@ begin
 	leftResult1 <= rightRegOut1; 
 	xor1 : XORBit32 PORT MAP(leftRegOut1, feistelResult1, rightResult1);
 	
-	regLeft2 : PIPOShift32 PORT MAP(leftResult1, leftRegOut1);
-	regRight2 : PIPOShift32 PORT MAP(rightResult1, rightRegOut1);
+	regLeft2 : PIPOShift32 PORT MAP(leftResult1, leftRegOut2);
+	regRight2 : PIPOShift32 PORT MAP(rightResult1, rightRegOut2);
 	f2 : feistelFunction PORT MAP(right2, key2Out, feistelResult2);
 	leftResult2 <= right2; 
-	xor2 : XORBit32 PORT MAP (leftRegOut2, feistelResult2, rightResult3);
+	xor2 : XORBit32 PORT MAP (leftRegOut2, feistelResult2, rightResult2);
 	
-	regLeft3 : PIPOShift32 PORT MAP(leftResult2, leftRegOut2);
-	regRight3 : PIPOShift32 PORT MAP(rightResult2, rightRegOut2);
+	regLeft3 : PIPOShift32 PORT MAP(leftResult2, leftRegOut3);
+	regRight3 : PIPOShift32 PORT MAP(rightResult2, rightRegOut3);
 	f3 : feistelFunction PORT MAP(right3, key3Out, feistelResult3);
 	leftResult3 <= right3; 
-	xor3 : XORBit32 PORT MAP (leftRegOut3, feistelResult3, rightResult4);
+	xor3 : XORBit32 PORT MAP (leftRegOut3, feistelResult3, rightResult3);
 
-	regLeft4 : PIPOShift32 PORT MAP(leftResult3, leftRegOut3);
-	regRight4 : PIPOShift32 PORT MAP(rightResult3, rightRegOut3);
+	regLeft4 : PIPOShift32 PORT MAP(leftResult3, leftRegOut4);
+	regRight4 : PIPOShift32 PORT MAP(rightResult3, rightRegOut4);
 	f4 : feistelFunction PORT MAP(right4, key4Out, feistelResult4);
 	leftResult4 <= right4; 
-	xor4 : XORBit32 PORT MAP (leftRegOut4, feistelResult4, rightResult5);
+	xor4 : XORBit32 PORT MAP (leftRegOut4, feistelResult4, rightResult4);
 
-	regLeft5 : PIPOShift32 PORT MAP(leftResult4, leftRegOut4);
-	regRight5 : PIPOShift32 PORT MAP(rightResult4, rightRegOut4);
+	regLeft5 : PIPOShift32 PORT MAP(leftResult4, leftRegOut5);
+	regRight5 : PIPOShift32 PORT MAP(rightResult4, rightRegOut5);
 	f5 : feistelFunction PORT MAP(right5, key5Out, feistelResult5);
 	leftResult5 <= right5; 
-	xor5 : XORBit32 PORT MAP (leftRegOut5, feistelResult5, rightResult6);
+	xor5 : XORBit32 PORT MAP (leftRegOut5, feistelResult5, rightResult5);
 
-	regLeft6 : PIPOShift32 PORT MAP(leftResult5, leftRegOut5);
-	regRight6 : PIPOShift32 PORT MAP(rightResult5, rightRegOut5);
+	regLeft6 : PIPOShift32 PORT MAP(leftResult5, leftRegOut6);
+	regRight6 : PIPOShift32 PORT MAP(rightResult5, rightRegOut6);
 	f6 : feistelFunction PORT MAP(right6, key6Out, feistelResult6);
 	leftResult6 <= right6; 
-	xor6 : XORBit32 PORT MAP (leftRegOut6, feistelResult6, rightResult7);
+	xor6 : XORBit32 PORT MAP (leftRegOut6, feistelResult6, rightResult6);
 
-	regLeft7 : PIPOShift32 PORT MAP(leftResult6, leftRegOut6);
-	regRight7 : PIPOShift32 PORT MAP(rightResult6, rightRegOut6);
+	regLeft7 : PIPOShift32 PORT MAP(leftResult6, leftRegOut7);
+	regRight7 : PIPOShift32 PORT MAP(rightResult6, rightRegOut7);
 	f7 : feistelFunction PORT MAP(right7, key7Out, feistelResult7);
 	leftResult7 <= right7; 
-	xor7 : XORBit32 PORT MAP (leftRegOut7, feistelResult7, rightResult8);
+	xor7 : XORBit32 PORT MAP (leftRegOut7, feistelResult7, rightResult7);
 
-	regLeft8 : PIPOShift32 PORT MAP(leftResult7, leftRegOut7);
-	regRight8 : PIPOShift32 PORT MAP(rightResult7, rightRegOut7);
+	regLeft8 : PIPOShift32 PORT MAP(leftResult7, leftRegOut8);
+	regRight8 : PIPOShift32 PORT MAP(rightResult7, rightRegOut8);
 	f8 : feistelFunction PORT MAP(right8, key8Out, feistelResult8);
 	leftResult8 <= right8; 
-	xor8 : XORBit32 PORT MAP (leftRegOut8, feistelResult8, rightResult9);
+	xor8 : XORBit32 PORT MAP (leftRegOut8, feistelResult8, rightResult8);
 
-	regLeft9 : PIPOShift32 PORT MAP(leftResult8, leftRegOut8);
-	regRight9 : PIPOShift32 PORT MAP(rightResult8, rightRegOut8);
+	regLeft9 : PIPOShift32 PORT MAP(leftResult8, leftRegOut9);
+	regRight9 : PIPOShift32 PORT MAP(rightResult8, rightRegOut9);
 	f9 : feistelFunction PORT MAP(right9, key9Out, feistelResult9);
 	leftResult9 <= right9; 
-	xor9 : XORBit32 PORT MAP (leftRegOut9, feistelResult9, rightResult10);
+	xor9 : XORBit32 PORT MAP (leftRegOut9, feistelResult9, rightResult9);
 
-	regLeft10 : PIPOShift32 PORT MAP(leftResult9, leftRegOut9);
-	regRight10 : PIPOShift32 PORT MAP(rightResult9, rightRegOut9);
+	regLeft10 : PIPOShift32 PORT MAP(leftResult9, leftRegOut10);
+	regRight10 : PIPOShift32 PORT MAP(rightResult9, rightRegOut10);
 	f10 : feistelFunction PORT MAP(right10, key10Out, feistelResult10);
 	leftResult10 <= right10; 
-	xor10 : XORBit32 PORT MAP (leftRegOut10, feistelResult10, rightResult11);
+	xor10 : XORBit32 PORT MAP (leftRegOut10, feistelResult10, rightResult10);
 
-	regLeft11 : PIPOShift32 PORT MAP(leftResult10, leftRegOut10);
-	regRight11 : PIPOShift32 PORT MAP(rightResult10, rightRegOut10);
+	regLeft11 : PIPOShift32 PORT MAP(leftResult10, leftRegOut11);
+	regRight11 : PIPOShift32 PORT MAP(rightResult10, rightRegOut11);
 	f11 : feistelFunction PORT MAP(right11, key11Out, feistelResult11);
 	leftResult11 <= right11; 
-	xor11 : XORBit32 PORT MAP (leftRegOut11, feistelResult11, rightResult12);
+	xor11 : XORBit32 PORT MAP (leftRegOut11, feistelResult11, rightResult11);
 
-	regLeft12 : PIPOShift32 PORT MAP(leftResult11, leftRegOut11);
-	regRight12 : PIPOShift32 PORT MAP(rightResult11, rightRegOut11);
+	regLeft12 : PIPOShift32 PORT MAP(leftResult11, leftRegOut12);
+	regRight12 : PIPOShift32 PORT MAP(rightResult11, rightRegOut12);
 	f12 : feistelFunction PORT MAP(right12, key12Out, feistelResult12);
 	leftResult12 <= right12; 
-	xor12 : XORBit32 PORT MAP (leftRegOut12, feistelResult12, rightResult13);
+	xor12 : XORBit32 PORT MAP (leftRegOut12, feistelResult12, rightResult12);
 
-	regLeft13 : PIPOShift32 PORT MAP(leftResult12, leftRegOut12);
-	regRight13 : PIPOShift32 PORT MAP(rightResult12, rightRegOut12);
+	regLeft13 : PIPOShift32 PORT MAP(leftResult12, leftRegOut13);
+	regRight13 : PIPOShift32 PORT MAP(rightResult12, rightRegOut13);
 	f13 : feistelFunction PORT MAP(right13, key13Out, feistelResult13);
 	leftResult13 <= right13; 
-	xor13 : XORBit32 PORT MAP (leftRegOut13, feistelResult13, rightResult14);
+	xor13 : XORBit32 PORT MAP (leftRegOut13, feistelResult13, rightResult13);
 
-	regLeft14 : PIPOShift32 PORT MAP(leftResult13, leftRegOut13);
-	regRight14 : PIPOShift32 PORT MAP(rightResult13, rightRegOut13);
+	regLeft14 : PIPOShift32 PORT MAP(leftResult13, leftRegOut14);
+	regRight14 : PIPOShift32 PORT MAP(rightResult13, rightRegOut14);
 	f14 : feistelFunction PORT MAP(right14, key14Out, feistelResult14);
 	leftResult14 <= right14; 
-	xor14 : XORBit32 PORT MAP (leftRegOut14, feistelResult14, rightResult15);
+	xor14 : XORBit32 PORT MAP (leftRegOut14, feistelResult14, rightResult14);
 
-	regLeft15 : PIPOShift32 PORT MAP(leftResult14, leftRegOut14);
-	regRight15 : PIPOShift32 PORT MAP(rightResult14, rightRegOut14);
+	regLeft15 : PIPOShift32 PORT MAP(leftResult14, leftRegOut15);
+	regRight15 : PIPOShift32 PORT MAP(rightResult14, rightRegOut15);
 	f15 : feistelFunction PORT MAP(right15, key15Out, feistelResult15);
 	leftResult15 <= right15; 
-	xor15 : XORBit32 PORT MAP (leftRegOut15, feistelResult15, rightResult16);
+	xor15 : XORBit32 PORT MAP (leftRegOut15, feistelResult15, rightResult15);
 
-	regLeft16 : PIPOShift32 PORT MAP(leftResult15, leftRegOut15);
-	regRight16 : PIPOShift32 PORT MAP(rightResult15, rightRegOut15);
+	regLeft16 : PIPOShift32 PORT MAP(leftResult15, leftRegOut16);
+	regRight16 : PIPOShift32 PORT MAP(rightResult15, rightRegOut16);
 	f16 : feistelFunction PORT MAP(right16, key16Out, feistelResult16);
 	leftResult16 <= right16; 
-	xor16 : XORBit32 PORT MAP (leftRegOut16, feistelResult16, rightResult17);
+	xor16 : XORBit32 PORT MAP (leftRegOut16, feistelResult16, rightResult16);
 	
-
+	regFinalLeft : PIPOShift32 PORT MAP(leftResult16, )
 end architecture ; -- arch
