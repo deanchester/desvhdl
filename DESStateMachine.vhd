@@ -5,7 +5,7 @@ library ieee ;
 entity DESStateMachine is
   port (
 	clock, reset : IN STD_LOGIC;
-	select1, select2 : OUT STD_LOGIC;
+	select1, select2, load : OUT STD_LOGIC;
 	key_select : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
   ) ;
 end entity ; -- DESStateMachine
