@@ -32,4 +32,43 @@ architecture arch of KeyContainer is
 	sr16Out : STD_LOGIC_VECTOR(47 DOWNTO 0);
 begin
 
+	process(clock)
+	begin 
+		if (clock'EVENT AND clock='1' AND load='1') then
+			sr1Out <= key1Out;
+			sr2Out <= key2Out;
+			sr3Out <= key3Out;
+			sr4Out <= key4Out;
+			sr5Out <= key5Out;
+			sr6Out <= key6Out;
+			sr7Out <= key7Out;
+			sr8Out <= key8Out;
+			sr9Out <= key9Out;
+			sr10Out <= key10Out;
+			sr11Out <= key11Out;
+			sr12Out <= key12Out;
+			sr13Out <= key13Out;
+			sr14Out <= key14Out;
+			sr15Out <= key15Out;
+			sr16Out <= key16Out;
+			keyOut <= sr1Out;
+		elsif (clock'EVENT AND clock='1' AND load='0') then
+			sr1Out <= sr2Out;
+			sr2Out <= sr3Out;
+			sr3Out <= sr4Out;
+			sr4Out <= sr5Out;
+			sr5Out <= sr6Out;
+			sr6Out <= sr7Out;
+			sr7Out <= sr8Out;
+			sr8Out <= sr9Out;
+			sr9Out <= sr10Out;
+			sr10Out <= sr11Out;
+			sr11Out <= sr12Out;
+			sr12Out <= sr13Out;
+			sr13Out <= sr14Out;
+			sr14Out <= sr15Out;
+			sr15Out <= sr16Out;
+			keyOut <= sr1Out;
+		end if;
+	end process;
 end architecture ; -- arch
