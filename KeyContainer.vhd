@@ -4,7 +4,7 @@ library ieee ;
 
 entity KeyContainer is
   port (
-	clock : IN STD_LOGIC;
+	clock, load : IN STD_LOGIC;
 	key1Out : IN STD_LOGIC_VECTOR(47 DOWNTO 0);
 	key2Out : IN STD_LOGIC_VECTOR(47 DOWNTO 0);
 	key3Out : IN STD_LOGIC_VECTOR(47 DOWNTO 0);
@@ -27,7 +27,9 @@ entity KeyContainer is
 end entity ; -- KeyContainer
 
 architecture arch of KeyContainer is
-
+	signal sr1Out, sr2Out, sr3Out, sr4Out, sr5Out, sr6Out, sr7Out, sr8Out, sr9Out,
+	sr10Out, sr11Out, sr12Out, sr13Out, sr14Out, sr15Out,
+	sr16Out : STD_LOGIC_VECTOR(47 DOWNTO 0);
 begin
 
 end architecture ; -- arch
