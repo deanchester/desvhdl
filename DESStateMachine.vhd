@@ -11,7 +11,7 @@ entity DESStateMachine is
 end entity ; -- DESStateMachine
 
 architecture arch of DESStateMachine is
-	type STATETYPE is (SCHEDULE_KEYS, LOAD_KEYS, R1Load, R1Save, R2Load, R2Save,
+	type STATETYPE is (StartState, SCHEDULE_KEYS, LOAD_KEYS, R1Load, R1Save, R2Load, R2Save,
 		R3Load, R3Save, R4Load, R4Save, R5Load, R5Save, R6Load, R6Save, R7Load,
 		R7Save, R8Load, R8Save, R9Load, R9Save, R10Load, R10Save, R11Load,
 		R11Save, R12Load, R12Save, R13Load, R13Save, R14Load, R14Save, R15Load,
@@ -40,5 +40,12 @@ begin
 	
 	done <= '1' when State = Result else '0';
 	
-	
+	process(clock, reset) 
+	begin
+		if reset = '1' then state <= StartState;
+		elsif CLK'EVENT and CLK = '1' then
+			case State is
+				when StartState => state <= SCHEDULE_KEYS;
+			
+	end process;
 end architecture ; -- arch
