@@ -133,7 +133,7 @@ architecture arch of DESEncrypt is
 		sr1Left : PIPOShift32 PORT MAP(clock, muxLeftOut, srLeftOut);
 		sr1Right : PIPOShift32 PORT MAP(clock, muxRightOut, srRightOut);
 		
-		feistelFunc : feistelFunction PORT MAP(srLeftOut, keyOut, newLeft);
+		feistelFunc : feistelFunction PORT MAP(srRightOut, keyOut, newLeft);
 		xorMod : XORBit32 PORT MAP(srLeftOut, feistelFuncOut, newRight);
 		
 		sr2Left : PIPOShift32 PORT MAP(clock, newLeft, newLeftSROut);
