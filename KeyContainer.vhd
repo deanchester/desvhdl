@@ -28,29 +28,31 @@ end entity ; -- KeyContainer
 
 architecture arch of KeyContainer is
 	signal sr1Out, sr2Out, sr3Out, sr4Out, sr5Out, sr6Out, sr7Out, sr8Out, sr9Out,
-	sr10Out, sr11Out, sr12Out, sr13Out, sr14Out, sr15Out,
-	sr16Out : STD_LOGIC_VECTOR(47 DOWNTO 0);
+		sr10Out, sr11Out, sr12Out, sr13Out, sr14Out, sr15Out, sr16Out, sr17Out,
+		sr18Out, sr19Out, sr20Out, sr21Out, sr22Out, sr23Out, sr24Out, sr25Out,
+		sr26Out, sr27Out, sr28Out, sr29Out, sr30Out,
+		sr31Out: STD_LOGIC_VECTOR(47 DOWNTO 0);
 begin
 
 	process(clock)
 	begin 
 		if (clock'EVENT AND clock='1' AND load='1') then
 			sr1Out <= key1In;
-			sr2Out <= key2In;
-			sr3Out <= key3In;
-			sr4Out <= key4In;
-			sr5Out <= key5In;
-			sr6Out <= key6In;
-			sr7Out <= key7In;
-			sr8Out <= key8In;
-			sr9Out <= key9In;
-			sr10Out <= key10In;
-			sr11Out <= key11In;
-			sr12Out <= key12In;
-			sr13Out <= key13In;
-			sr14Out <= key14In;
-			sr15Out <= key15In;
-			sr16Out <= key16In;
+			sr3Out <= key2In;
+			sr5Out <= key3In;
+			sr7Out <= key4In;
+			sr9Out <= key5In;
+			sr11Out <= key6In;
+			sr13Out <= key7In;
+			sr15Out <= key8In;
+			sr17Out <= key9In;
+			sr19Out <= key10In;
+			sr21Out <= key11In;
+			sr23Out <= key12In;
+			sr25Out <= key13In;
+			sr27Out <= key14In;
+			sr29Out <= key15In;
+			sr31Out <= key16In;
 			keyOut <= sr1Out;
 		elsif (clock'EVENT AND clock='1' AND load='0') then
 			sr1Out <= sr2Out;
@@ -68,6 +70,21 @@ begin
 			sr13Out <= sr14Out;
 			sr14Out <= sr15Out;
 			sr15Out <= sr16Out;
+			sr16Out <= sr17Out;
+			sr17Out <= sr18Out;
+			sr18Out <= sr19Out;
+			sr19Out <= sr20Out;
+			sr20Out <= sr21Out;
+			sr21Out <= sr22Out;
+			sr22Out <= sr23Out;
+			sr23Out <= sr24Out;
+			sr24Out <= sr25Out;
+			sr25Out <= sr26Out;
+			sr26Out <= sr27Out;
+			sr27Out <= sr28Out;
+			sr28Out <= sr29Out;
+			sr29Out <= sr30Out;
+			sr30Out <= sr31Out;
 			keyOut <= sr1Out;
 		end if;
 	end process;
