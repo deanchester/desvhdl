@@ -7,12 +7,12 @@ library ieee ;
 entity initialPermutation is
   port (
 	plain : IN STD_LOGIC_VECTOR(63 DOWNTO 0);
-	permutated : OUT STD_LOGIC_VECTOR(63 DOWNTO 0)
+	left, right : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
   );
 end entity ; -- initialPermutation
 
 architecture arch of initialPermutation is
-
+	SIGNAL permutated : STD_LOGIC_VECTOR(63 DOWNTO 0);
 begin
     permutated(0)<=plain(57);
     permutated(1)<=plain(49);
@@ -85,4 +85,6 @@ begin
     permutated(61)<=plain(22);
     permutated(62)<=plain(14);
     permutated(63)<=plain(6);
+	left <= permutated(31 DOWNTO 0);
+	right <= permutated(63 DOWNTO 32);
 end architecture ; -- arch
