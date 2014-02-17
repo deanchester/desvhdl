@@ -18,23 +18,23 @@ architecture arch of DESStateMachine is
 		R15Save, R16Load, R16Save, Result);
 	signal State : STATETYPE;
 begin
-	select1 <= '1' when State = R2Load OR State = R2Save ORState = R3Load 
-		OR State = R3Save ORState = R4Load OR State = R4Save ORState = R5Load 
-		OR State = R5Save ORState = R6Load OR State = R6Save ORState = R7Load 
-		OR State = R7Save ORState = R8Load OR State = R8Save ORState = R9Load 
-		OR State = R9Save ORState = R10Load OR State = R10Save ORState = R11Load 
-		OR State = R11Save ORState = R12Load OR State = R12Save ORState = R13Load 
-		OR State = R13Save ORState = R14Load OR State = R14Save ORState = R15Load 
-		OR State = R15Save ORState = R16Load OR State = R16Save else '0';
+	select1 <= '1' when State = R2Load OR State = R2Save OR State = R3Load 
+		OR State = R3Save OR State = R4Load OR State = R4Save OR State = R5Load 
+		OR State = R5Save OR State = R6Load OR State = R6Save OR State = R7Load 
+		OR State = R7Save OR State = R8Load OR State = R8Save OR State = R9Load 
+		OR State = R9Save OR State = R10Load OR State = R10Save OR State = R11Load 
+		OR State = R11Save OR State = R12Load OR State = R12Save OR State = R13Load 
+		OR State = R13Save OR State = R14Load OR State = R14Save OR State = R15Load 
+		OR State = R15Save OR State = R16Load OR State = R16Save else '0';
 		
-	select2 <= '1' when State = R2Load OR State = R2Save ORState = R3Load 
-		OR State = R3Save ORState = R4Load OR State = R4Save ORState = R5Load 
-		OR State = R5Save ORState = R6Load OR State = R6Save ORState = R7Load 
-		OR State = R7Save ORState = R8Load OR State = R8Save ORState = R9Load 
-		OR State = R9Save ORState = R10Load OR State = R10Save ORState = R11Load 
-		OR State = R11Save ORState = R12Load OR State = R12Save ORState = R13Load 
-		OR State = R13Save ORState = R14Load OR State = R14Save ORState = R15Load 
-		OR State = R15Save ORState = R16Load OR State = R16Save else '0';
+	select2 <= '1' when State = R2Load OR State = R2Save OR State = R3Load 
+		OR State = R3Save OR State = R4Load OR State = R4Save OR State = R5Load 
+		OR State = R5Save OR State = R6Load OR State = R6Save OR State = R7Load 
+		OR State = R7Save OR State = R8Load OR State = R8Save OR State = R9Load 
+		OR State = R9Save OR State = R10Load OR State = R10Save OR State = R11Load 
+		OR State = R11Save OR State = R12Load OR State = R12Save OR State = R13Load 
+		OR State = R13Save OR State = R14Load OR State = R14Save OR State = R15Load 
+		OR State = R15Save OR State = R16Load OR State = R16Save else '0';
 		
 	load <= '1' when State = LOAD_KEYS else '0';
 	
@@ -42,8 +42,8 @@ begin
 	
 	process(clock, reset) 
 	begin
-		if reset = '1' then state <= StartState;
-		elsif CLK'EVENT and CLK = '1' then
+		if reset = '1' then state <= START_STATE;
+		elsif clock'EVENT and clock = '1' then
 			case State is
 				when START_STATE => 
 					if start = '1' then 
@@ -83,7 +83,7 @@ begin
 				when R15Save => state <=  R16Load;
 				when R16Load => state <=  R16Save;
 				when R16Save => state <=  result;
-				when resit
+				when others => state <= START_STATE;
 			end case;
 		end if;
 	end process;
