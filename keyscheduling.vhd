@@ -77,7 +77,7 @@ begin
 	ls3Left : LeftShift PORT MAP (s2LeftShifted, s3LeftShifted);
 	ls3Right : LeftShift PORT MAP(s2RightShifted, s3RightShifted);
 	ls3Left1 : LeftShift PORT MAP (s3LeftShifted, s3LeftShiftedShifted);
-	ls3Right1 : LeftShift PORT MAP(s2RightShifted, s3RightShiftedShifted);
+	ls3Right1 : LeftShift PORT MAP(s3RightShifted, s3RightShiftedShifted);
 	pc2Inst3 : pc2 PORT MAP(s3LeftShiftedShifted, s3RightShiftedShifted, key3Out);
 	
 	ls4Left : LeftShift PORT MAP (s3LeftShiftedShifted, s4LeftShifted);
