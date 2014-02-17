@@ -101,7 +101,7 @@ architecture arch of DESEncrypt is
 	  port (
 		R : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
 		K : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-		RES : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+		RES : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
 	  ) ;
 	end COMPONENT;
 	
