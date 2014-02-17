@@ -34,7 +34,7 @@ architecture arch of KeyContainer is
 		sr31Out: STD_LOGIC_VECTOR(47 DOWNTO 0);
 begin
 
-	process(clock)
+	process(clock, load)
 	begin 
 		if (clock'EVENT AND clock='1' AND load='1') then
 			sr1Out <= key1In;
