@@ -13,7 +13,7 @@ end entity ; -- pc2
 architecture arch of pc2 is
 	signal combined : STD_LOGIC_VECTOR(56 DOWNTO 0);
 begin
-	combined(58 DOWNTO 28) <= C(27 DOWNTO 0);
+	combined(56 DOWNTO 28) <= C(27 DOWNTO 0);
 	combined(27 DOWNTO 0) <= D(27 DOWNTO 0);
 	K(0) <= combined(14);
 	K(1) <= combined(17);
