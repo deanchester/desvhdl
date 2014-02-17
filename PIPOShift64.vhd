@@ -6,7 +6,7 @@ entity PIPOShift64 is
   port (
 	clock : IN STD_LOGIC;
 	dataIN : IN STD_LOGIC_VECTOR(64 DOWNTO 0);
-	dataOUT : OUT STD_LOGIC_VECTOR(64 DOWNTO 0);
+	dataOUT : OUT STD_LOGIC_VECTOR(64 DOWNTO 0)
   ) ;
 end entity ; -- PIPOShift32
 
