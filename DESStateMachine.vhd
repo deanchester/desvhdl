@@ -3,11 +3,11 @@ library ieee ;
 	use ieee.numeric_std.all ;
 
 entity DESStateMachine is
-  port (
-	start, clock, reset : IN STD_LOGIC;
-	select1, select2, load : OUT STD_LOGIC;
-	done : OUT STD_LOGIC
-  ) ;
+	port (
+		start, clock, reset : IN STD_LOGIC;
+		select1, select2, load : OUT STD_LOGIC;
+		done : OUT STD_LOGIC
+	) ;
 end entity ; -- DESStateMachine
 
 architecture arch of DESStateMachine is
