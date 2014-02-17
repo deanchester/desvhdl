@@ -4,9 +4,9 @@ library ieee ;
 
 entity DESEncrypt is
 	port (
-		clock, start : IN STD_LOGIC; 
+		clock, start, reset : IN STD_LOGIC; 
 		plainText, key : IN STD_LOGIC_VECTOR(63 DOWNTO 0);
-	
+		done : OUT STD_LOGIC;
 		ciperText : OUT STD_LOGIC_VECTOR(63 DOWNTO 0);
 	) ;
 end entity ; -- DESEncrypt
@@ -39,7 +39,7 @@ architecture arch of DESEncrypt is
 		port (
 			clock : IN STD_LOGIC;
 			dataIN : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-			dataOUT : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+			dataOUT : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
 		) ;
 	end COMPONENT;
 	
@@ -111,6 +111,34 @@ architecture arch of DESEncrypt is
 			inverseOut : Out STD_LOGIC_VECTOR(63 DOWNTO 0)
 		) ;
 	end COMPONENT;
-begin
+	
+	signal ipLeftMux, ipRightMux, muxLeftOut, muxRightOut, srLeftOut, srRightOut,
+		feistelFuncOut, newLeft, newRight, newLeftSROut,
+		newRightSROut : STD_LOGIC_VECTOR(31 DOWNTO 0);
+	signal selLeft, selRight, Load : STD_LOGIC;
+	signal keyOut, key1, key2, key3, key4, key5, key6, key7, key8, key9, key10,
+		key11, key12, key13, key14, key15, key16 : STD_LOGIC_VECTOR(47 DOWNTO 0);
+	begin
+		sm : DESStateMachine PORT MAP(start, clock, reset, selLeft, selRight, Load, done);
+		
+		ks : keyscheduling PORT MAP(key, key1, key2, key3, key4, key5, key6, 
+			key7, key8, key9, key10, key11, key12, key13, key14, key15, key16); 
+		kc : KeyContainer PORT MAP(clock, Load, key1, key2, key3, key4, key5, 
+			key6, key7, key8, key9, key10, key11, key12, key13, key14, key15, key16, keyOut); 
+		ipLeft : initialPermutation PORT MAP(plainText, ipLeftMux, ipRightMux);
+		
+		muxLeft : Mux32 PORT MAP(selLeft, newLeftSROut, ipLeftMux, muxLeftOut);
+		muxRight : Mux32 PORT MAP(selRight, newRightSROut, ipRightMux, muxRightOut);
+		
+		sr1Left : PIPOShift32 PORT MAP(clock, muxLeftOut, srLeftOut);
+		sr1Right : PIPOShift32 PORT MAP(clock, muxRightOut, srRightOut);
+		
+		feistelFunc : feistelFunction PORT MAP(srLeftOut, keyOut, newLeft);
+		xorMod : XORBit32 PORT MAP(srLeftOut, feistelFuncOut, newRight);
+		
+		sr2Left : PIPOShift32 PORT MAP(clock, newLeft, newLeftSROut);
+		sr2Right : PIPOShift32 PORT MAP(clock, newRight, newRightSROut);
+		
+		inverPerm : inversePermutation PORT MAP(newLeftSROut, newRightSROut, ciperText);
 
 end architecture ; -- arch
