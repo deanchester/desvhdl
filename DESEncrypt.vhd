@@ -7,7 +7,7 @@ entity DESEncrypt is
 		clock, start, reset : IN STD_LOGIC; 
 		plainText, key : IN STD_LOGIC_VECTOR(63 DOWNTO 0);
 		done : OUT STD_LOGIC;
-		ciperText : OUT STD_LOGIC_VECTOR(63 DOWNTO 0);
+		ciperText : OUT STD_LOGIC_VECTOR(63 DOWNTO 0)
 	) ;
 end entity ; -- DESEncrypt
 
