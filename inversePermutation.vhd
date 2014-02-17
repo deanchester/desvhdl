@@ -4,14 +4,16 @@ library ieee ;
 
 entity inversePermutation is
 	port (
-		inverseIn : IN STD_LOGIC_VECTOR(63 DOWNTO 0);
+		left, right : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
 		inverseOut : Out STD_LOGIC_VECTOR(63 DOWNTO 0)
 	) ;
 end entity ; -- inversePermutation
 
 architecture arch of inversePermutation is
-
+	SIGNAL inverseIn : STD_LOGIC_VECTOR(63 DOWNTO 0);
 begin
+	inverseIn(31 DOWNTO 0) <= left;
+	inverseIn(63 DOWNTO 32) <= right;
 	inverseOut(39) <= inverseIn(0);
 	inverseOut(7) <= inverseIn(1);
 	inverseOut(47) <= inverseIn(2);
