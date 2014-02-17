@@ -4,7 +4,7 @@ library ieee ;
 
 entity KeyContainer is
   port (
-	clock, load : IN STD_LOGIC;
+	clock, load, decryption: IN STD_LOGIC;
 	key1In : IN STD_LOGIC_VECTOR(47 DOWNTO 0);
 	key2In : IN STD_LOGIC_VECTOR(47 DOWNTO 0);
 	key3In : IN STD_LOGIC_VECTOR(47 DOWNTO 0);
@@ -36,7 +36,7 @@ begin
 
 	process(clock)
 	begin 
-		if (clock'EVENT AND clock='1' AND load='1') then
+		if (clock'EVENT AND clock='1' AND load='1' AND decryption='0') then
 			sr1Out <= key1In;
 			sr3Out <= key2In;
 			sr5Out <= key3In;
@@ -53,6 +53,24 @@ begin
 			sr27Out <= key14In;
 			sr29Out <= key15In;
 			sr31Out <= key16In;
+			keyOut <= sr1Out;
+		if (clock'EVENT AND clock='1' AND load='1' AND decryption='1') then
+			sr1Out <= key16In;
+			sr3Out <= key15In;
+			sr5Out <= key14In;
+			sr7Out <= key13In;
+			sr9Out <= key12In;
+			sr11Out <= key11In;
+			sr13Out <= key10In;
+			sr15Out <= key9In;
+			sr17Out <= key8In;
+			sr19Out <= key7In;
+			sr21Out <= key6In;
+			sr23Out <= key5In;
+			sr25Out <= key4In;
+			sr27Out <= key3In;
+			sr29Out <= key2In;
+			sr31Out <= key1In;
 			keyOut <= sr1Out;
 		elsif (clock'EVENT AND clock='1' AND load='0') then
 			sr1Out <= sr2Out;
