@@ -44,7 +44,7 @@ architecture arch of keyscheduling is
 		port (
 			C : IN STD_LOGIC_VECTOR(27 DOWNTO 0);
 			D : IN STD_LOGIC_VECTOR(27 DOWNTO 0);
-			K : OUT STD_LOGIC_VECTOR(47 DOWNTO 0);
+			K : OUT STD_LOGIC_VECTOR(47 DOWNTO 0)
 		) ;
 	end component;
 	
@@ -62,7 +62,7 @@ architecture arch of keyscheduling is
 		s5RightShiftedShifted, s6LeftShiftedShifted, s6RightShiftedShifted, s7LeftShiftedShifted, s7RightShiftedShifted, 
 		s8LeftShiftedShifted, s8RightShiftedShifted, s10LeftShiftedShifted, s10RightShiftedShifted, s11LeftShiftedShifted, 
 		s11RightShiftedShifted, s12LeftShiftedShifted, s12RightShiftedShifted, s13LeftShiftedShifted, s13RightShiftedShifted, 
-		s14LeftShiftedShifted, s14RightShiftedShifted, s15LeftShiftedShifted, s15RightShiftedShifted, : STD_LOGIC_VECTOR(27 DOWNTO 0);
+		s14LeftShiftedShifted, s14RightShiftedShifted, s15LeftShiftedShifted, s15RightShiftedShifted : STD_LOGIC_VECTOR(27 DOWNTO 0);
 begin
 	pc1Inst : pc1 PORT MAP(keyIn, s1Left, s1Right);
 	
@@ -77,7 +77,7 @@ begin
 	ls3Left : LeftShift PORT MAP (s2LeftShifted, s3LeftShifted);
 	ls3Right : LeftShift PORT MAP(s2RightShifted, s3RightShifted);
 	ls3Left1 : LeftShift PORT MAP (s3LeftShifted, s3LeftShiftedShifted);
-	ls3Right1 : LeftShift PORT MAP(s2RightShifted, s3RightShiftedShifted);
+	ls3Right1 : LeftShift PORT MAP(s3RightShifted, s3RightShiftedShifted);
 	pc2Inst3 : pc2 PORT MAP(s3LeftShiftedShifted, s3RightShiftedShifted, key3Out);
 	
 	ls4Left : LeftShift PORT MAP (s3LeftShiftedShifted, s4LeftShifted);
@@ -150,7 +150,7 @@ begin
 	ls15Right1 : LeftShift PORT MAP(s15RightShifted, s15RightShiftedShifted);
 	pc2Inst15: pc2 PORT MAP(s15LeftShiftedShifted, s15RightShiftedShifted, key15Out);
 		
-	ls16Left : LeftShift PORT MAP (s15LeftShiftedShifted, s16sLeftShifted);
+	ls16Left : LeftShift PORT MAP (s15LeftShiftedShifted, s16LeftShifted);
 	ls16Right : LeftShift PORT MAP(s15RightShiftedShifted, s16RightShifted);
 	pc16Inst9 : pc2 PORT MAP(s16LeftShifted, s16RightShifted, key16Out);
 end architecture ; -- arch

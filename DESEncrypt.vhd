@@ -7,7 +7,7 @@ entity DESEncrypt is
 		clock, start, reset : IN STD_LOGIC; 
 		plainText, key : IN STD_LOGIC_VECTOR(63 DOWNTO 0);
 		done : OUT STD_LOGIC;
-		ciperText : OUT STD_LOGIC_VECTOR(63 DOWNTO 0);
+		ciperText : OUT STD_LOGIC_VECTOR(63 DOWNTO 0)
 	) ;
 end entity ; -- DESEncrypt
 
@@ -61,7 +61,7 @@ architecture arch of DESEncrypt is
 			key13In : IN STD_LOGIC_VECTOR(47 DOWNTO 0);
 			key14In : IN STD_LOGIC_VECTOR(47 DOWNTO 0);
 			key15In : IN STD_LOGIC_VECTOR(47 DOWNTO 0);
-			key16In : IN STD_LOGIC_VECTOR(47 DOWNTO 0)
+			key16In : IN STD_LOGIC_VECTOR(47 DOWNTO 0);
 			
 			keyOut : OUT STD_LOGIC_VECTOR(47 DOWNTO 0)
 	) ;
@@ -101,7 +101,7 @@ architecture arch of DESEncrypt is
 	  port (
 		R : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
 		K : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-		RES : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+		RES : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
 	  ) ;
 	end COMPONENT;
 	
@@ -133,8 +133,10 @@ architecture arch of DESEncrypt is
 		sr1Left : PIPOShift32 PORT MAP(clock, muxLeftOut, srLeftOut);
 		sr1Right : PIPOShift32 PORT MAP(clock, muxRightOut, srRightOut);
 		
-		feistelFunc : feistelFunction PORT MAP(srLeftOut, keyOut, newLeft);
+		feistelFunc : feistelFunction PORT MAP(srRightOut, keyOut, feistelFuncOut);
 		xorMod : XORBit32 PORT MAP(srLeftOut, feistelFuncOut, newRight);
+		
+		newLeft <= srRightOut;
 		
 		sr2Left : PIPOShift32 PORT MAP(clock, newLeft, newLeftSROut);
 		sr2Right : PIPOShift32 PORT MAP(clock, newRight, newRightSROut);

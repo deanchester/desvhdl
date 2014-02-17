@@ -76,6 +76,6 @@ begin
 	d(24) <= kIN(27);
    	d(25) <= kIN(19);
 	d(26) <= kIN(11);
-	c(27) <= kIN(3);
+	d(27) <= kIN(3);
 
 end architecture ; -- arch

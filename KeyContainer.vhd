@@ -20,7 +20,7 @@ entity KeyContainer is
 	key13In : IN STD_LOGIC_VECTOR(47 DOWNTO 0);
 	key14In : IN STD_LOGIC_VECTOR(47 DOWNTO 0);
 	key15In : IN STD_LOGIC_VECTOR(47 DOWNTO 0);
-	key16In : IN STD_LOGIC_VECTOR(47 DOWNTO 0)
+	key16In : IN STD_LOGIC_VECTOR(47 DOWNTO 0);
 	
 	keyOut : OUT STD_LOGIC_VECTOR(47 DOWNTO 0)
   ) ;
@@ -34,7 +34,7 @@ architecture arch of KeyContainer is
 		sr31Out: STD_LOGIC_VECTOR(47 DOWNTO 0);
 begin
 
-	process(clock)
+	process(clock, load)
 	begin 
 		if (clock'EVENT AND clock='1' AND load='1' AND decryption='0') then
 			sr1Out <= key1In;
