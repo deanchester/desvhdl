@@ -46,6 +46,7 @@ begin
 		elsif CLK'EVENT and CLK = '1' then
 			case State is
 				when StartState => state <= SCHEDULE_KEYS;
-			
+			end case;
+		end if;
 	end process;
 end architecture ; -- arch
