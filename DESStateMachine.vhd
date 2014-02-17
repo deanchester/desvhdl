@@ -4,9 +4,9 @@ library ieee ;
 
 entity DESStateMachine is
   port (
-	clock, reset : IN STD_LOGIC;
+	start, clock, reset : IN STD_LOGIC;
 	select1, select2, load : OUT STD_LOGIC;
-	complete : OUT STD_LOGIC
+	done : OUT STD_LOGIC
   ) ;
 end entity ; -- DESStateMachine
 
@@ -18,5 +18,27 @@ architecture arch of DESStateMachine is
 		R15Save, R16Load, R16Save, Result);
 	signal State : STATETYPE;
 begin
+	select1 <= '1' when State = R2Load OR State = R2Save ORState = R3Load 
+		OR State = R3Save ORState = R4Load OR State = R4Save ORState = R5Load 
+		OR State = R5Save ORState = R6Load OR State = R6Save ORState = R7Load 
+		OR State = R7Save ORState = R8Load OR State = R8Save ORState = R9Load 
+		OR State = R9Save ORState = R10Load OR State = R10Save ORState = R11Load 
+		OR State = R11Save ORState = R12Load OR State = R12Save ORState = R13Load 
+		OR State = R13Save ORState = R14Load OR State = R14Save ORState = R15Load 
+		OR State = R15Save ORState = R16Load OR State = R16Save else '0';
+		
+	select2 <= '1' when State = R2Load OR State = R2Save ORState = R3Load 
+		OR State = R3Save ORState = R4Load OR State = R4Save ORState = R5Load 
+		OR State = R5Save ORState = R6Load OR State = R6Save ORState = R7Load 
+		OR State = R7Save ORState = R8Load OR State = R8Save ORState = R9Load 
+		OR State = R9Save ORState = R10Load OR State = R10Save ORState = R11Load 
+		OR State = R11Save ORState = R12Load OR State = R12Save ORState = R13Load 
+		OR State = R13Save ORState = R14Load OR State = R14Save ORState = R15Load 
+		OR State = R15Save ORState = R16Load OR State = R16Save else '0';
+		
+	load <= '1' when State = LOAD_KEYS else '0';
+	
+	done <= '1' when State = Result else '0';
+	
 	
 end architecture ; -- arch
