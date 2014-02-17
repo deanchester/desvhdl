@@ -11,7 +11,7 @@ entity pc2 is
 end entity ; -- pc2
 
 architecture arch of pc2 is
-	signal combined : STD_LOGIC_VECTOR(56 DOWNTO 0);
+	signal combined : STD_LOGIC_VECTOR(55 DOWNTO 0);
 begin
 	combined(55 DOWNTO 28) <= C;
 	combined(27 DOWNTO 0) <= D;
