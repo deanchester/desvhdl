@@ -10,4 +10,4 @@ It was designed with modularity in mind so each VHDL entity takes the form of a 
 
 The datapath looks like: 
 
-![Datapath](http://imgur.com/dkj3kcM)
+![Datapath](http://i.imgur.com/dkj3kcM.png)
