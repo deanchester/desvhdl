@@ -28,7 +28,7 @@ architecture arch of s1_box_test is
 	end p_stable;
 	
 	PROCEDURE value_at_0 is begin
-		dataIn := to_unsigned(0, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(0, 6));
 		sv_check_value := to_unsigned(14, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -36,7 +36,7 @@ architecture arch of s1_box_test is
 	end value_at_0;
 
 	PROCEDURE value_at_1 is begin
-		dataIn := to_unsigned(1, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(1, 6));
 		sv_check_value := to_unsigned(4, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -44,7 +44,7 @@ architecture arch of s1_box_test is
 	end value_at_1;
 
 	PROCEDURE value_at_2 is begin
-		dataIn := to_unsigned(2, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(2, 6));
 		sv_check_value := to_unsigned(13, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -52,7 +52,7 @@ architecture arch of s1_box_test is
 	end value_at_2;
 
 	PROCEDURE value_at_3 is begin
-		dataIn := to_unsigned(3, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(3, 6));
 		sv_check_value := to_unsigned(1, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -60,7 +60,7 @@ architecture arch of s1_box_test is
 	end value_at_3;
 
 	PROCEDURE value_at_4 is begin
-		dataIn := to_unsigned(4, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(4, 6));
 		sv_check_value := to_unsigned(2, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -68,7 +68,7 @@ architecture arch of s1_box_test is
 	end value_at_4;
 
 	PROCEDURE value_at_5 is begin
-		dataIn := to_unsigned(5, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(5, 6));
 		sv_check_value := to_unsigned(15, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -76,7 +76,7 @@ architecture arch of s1_box_test is
 	end value_at_5;
 
 	PROCEDURE value_at_6 is begin
-		dataIn := to_unsigned(6, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(6, 6));
 		sv_check_value := to_unsigned(11, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -84,7 +84,7 @@ architecture arch of s1_box_test is
 	end value_at_6;
 
 	PROCEDURE value_at_7 is begin
-		dataIn := to_unsigned(7, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(7, 6));
 		sv_check_value := to_unsigned(8, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -92,7 +92,7 @@ architecture arch of s1_box_test is
 	end value_at_7;
 
 	PROCEDURE value_at_8 is begin
-		dataIn := to_unsigned(8, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(8, 6));
 		sv_check_value := to_unsigned(3, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -100,7 +100,7 @@ architecture arch of s1_box_test is
 	end value_at_8;
 
 	PROCEDURE value_at_9 is begin
-		dataIn := to_unsigned(9, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(9, 6));
 		sv_check_value := to_unsigned(10, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -108,7 +108,7 @@ architecture arch of s1_box_test is
 	end value_at_9;
 
 	PROCEDURE value_at_10 is begin
-		dataIn := to_unsigned(10, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(10, 6));
 		sv_check_value := to_unsigned(6, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -116,7 +116,7 @@ architecture arch of s1_box_test is
 	end value_at_10;
 
 	PROCEDURE value_at_11 is begin
-		dataIn := to_unsigned(11, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(11, 6));
 		sv_check_value := to_unsigned(12, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -124,7 +124,7 @@ architecture arch of s1_box_test is
 	end value_at_11;
 
 	PROCEDURE value_at_12 is begin
-		dataIn := to_unsigned(12, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(12, 6));
 		sv_check_value := to_unsigned(5, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -132,7 +132,7 @@ architecture arch of s1_box_test is
 	end value_at_12;
 
 	PROCEDURE value_at_13 is begin
-		dataIn := to_unsigned(13, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(13, 6));
 		sv_check_value := to_unsigned(9, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -140,7 +140,7 @@ architecture arch of s1_box_test is
 	end value_at_13;
 
 	PROCEDURE value_at_14 is begin
-		dataIn := to_unsigned(14, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(14, 6));
 		sv_check_value := to_unsigned(0, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -148,7 +148,7 @@ architecture arch of s1_box_test is
 	end value_at_14;
 
 	PROCEDURE value_at_15 is begin
-		dataIn := to_unsigned(15, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(15, 6));
 		sv_check_value := to_unsigned(7, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -156,7 +156,7 @@ architecture arch of s1_box_test is
 	end value_at_15;
 
 	PROCEDURE value_at_16 is begin
-		dataIn := to_unsigned(16, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(16, 6));
 		sv_check_value := to_unsigned(0, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -164,7 +164,7 @@ architecture arch of s1_box_test is
 	end value_at_16;
 
 	PROCEDURE value_at_17 is begin
-		dataIn := to_unsigned(17, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(17, 6));
 		sv_check_value := to_unsigned(15, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -172,7 +172,7 @@ architecture arch of s1_box_test is
 	end value_at_17;
 
 	PROCEDURE value_at_18 is begin
-		dataIn := to_unsigned(18, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(18, 6));
 		sv_check_value := to_unsigned(7, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -180,7 +180,7 @@ architecture arch of s1_box_test is
 	end value_at_18;
 
 	PROCEDURE value_at_19 is begin
-		dataIn := to_unsigned(19, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(19, 6));
 		sv_check_value := to_unsigned(4, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -188,7 +188,7 @@ architecture arch of s1_box_test is
 	end value_at_19;
 
 	PROCEDURE value_at_20 is begin
-		dataIn := to_unsigned(20, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(20, 6));
 		sv_check_value := to_unsigned(14, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -196,7 +196,7 @@ architecture arch of s1_box_test is
 	end value_at_20;
 
 	PROCEDURE value_at_21 is begin
-		dataIn := to_unsigned(21, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(21, 6));
 		sv_check_value := to_unsigned(2, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -204,7 +204,7 @@ architecture arch of s1_box_test is
 	end value_at_21;
 
 	PROCEDURE value_at_22 is begin
-		dataIn := to_unsigned(22, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(22, 6));
 		sv_check_value := to_unsigned(13, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -212,7 +212,7 @@ architecture arch of s1_box_test is
 	end value_at_22;
 
 	PROCEDURE value_at_23 is begin
-		dataIn := to_unsigned(23, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(23, 6));
 		sv_check_value := to_unsigned(1, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -220,7 +220,7 @@ architecture arch of s1_box_test is
 	end value_at_23;
 
 	PROCEDURE value_at_24 is begin
-		dataIn := to_unsigned(24, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(24, 6));
 		sv_check_value := to_unsigned(10, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -228,7 +228,7 @@ architecture arch of s1_box_test is
 	end value_at_24;
 
 	PROCEDURE value_at_25 is begin
-		dataIn := to_unsigned(25, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(25, 6));
 		sv_check_value := to_unsigned(6, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -236,7 +236,7 @@ architecture arch of s1_box_test is
 	end value_at_25;
 
 	PROCEDURE value_at_26 is begin
-		dataIn := to_unsigned(26, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(26, 6));
 		sv_check_value := to_unsigned(12, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -244,7 +244,7 @@ architecture arch of s1_box_test is
 	end value_at_26;
 
 	PROCEDURE value_at_27 is begin
-		dataIn := to_unsigned(27, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(27, 6));
 		sv_check_value := to_unsigned(11, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -252,7 +252,7 @@ architecture arch of s1_box_test is
 	end value_at_27;
 
 	PROCEDURE value_at_28 is begin
-		dataIn := to_unsigned(28, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(28, 6));
 		sv_check_value := to_unsigned(9, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -260,7 +260,7 @@ architecture arch of s1_box_test is
 	end value_at_28;
 
 	PROCEDURE value_at_29 is begin
-		dataIn := to_unsigned(29, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(29, 6));
 		sv_check_value := to_unsigned(5, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -268,7 +268,7 @@ architecture arch of s1_box_test is
 	end value_at_29;
 
 	PROCEDURE value_at_30 is begin
-		dataIn := to_unsigned(30, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(30, 6));
 		sv_check_value := to_unsigned(3, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -276,7 +276,7 @@ architecture arch of s1_box_test is
 	end value_at_30;
 
 	PROCEDURE value_at_31 is begin
-		dataIn := to_unsigned(31, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(31, 6));
 		sv_check_value := to_unsigned(8, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -284,7 +284,7 @@ architecture arch of s1_box_test is
 	end value_at_31;
 
 	PROCEDURE value_at_32 is begin
-		dataIn := to_unsigned(32, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(32, 6));
 		sv_check_value := to_unsigned(4, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -292,7 +292,7 @@ architecture arch of s1_box_test is
 	end value_at_32;
 
 	PROCEDURE value_at_33 is begin
-		dataIn := to_unsigned(33, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(33, 6));
 		sv_check_value := to_unsigned(1, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -300,7 +300,7 @@ architecture arch of s1_box_test is
 	end value_at_33;
 
 	PROCEDURE value_at_34 is begin
-		dataIn := to_unsigned(34, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(34, 6));
 		sv_check_value := to_unsigned(14, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -308,7 +308,7 @@ architecture arch of s1_box_test is
 	end value_at_34;
 
 	PROCEDURE value_at_35 is begin
-		dataIn := to_unsigned(35, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(35, 6));
 		sv_check_value := to_unsigned(8, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -316,7 +316,7 @@ architecture arch of s1_box_test is
 	end value_at_35;
 
 	PROCEDURE value_at_36 is begin
-		dataIn := to_unsigned(36, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(36, 6));
 		sv_check_value := to_unsigned(13, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -324,7 +324,7 @@ architecture arch of s1_box_test is
 	end value_at_36;
 
 	PROCEDURE value_at_37 is begin
-		dataIn := to_unsigned(37, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(37, 6));
 		sv_check_value := to_unsigned(6, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -332,7 +332,7 @@ architecture arch of s1_box_test is
 	end value_at_37;
 
 	PROCEDURE value_at_38 is begin
-		dataIn := to_unsigned(38, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(38, 6));
 		sv_check_value := to_unsigned(2, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -340,7 +340,7 @@ architecture arch of s1_box_test is
 	end value_at_38;
 
 	PROCEDURE value_at_39 is begin
-		dataIn := to_unsigned(39, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(39, 6));
 		sv_check_value := to_unsigned(11, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -348,7 +348,7 @@ architecture arch of s1_box_test is
 	end value_at_39;
 
 	PROCEDURE value_at_40 is begin
-		dataIn := to_unsigned(40, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(40, 6));
 		sv_check_value := to_unsigned(15, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -356,7 +356,7 @@ architecture arch of s1_box_test is
 	end value_at_40;
 
 	PROCEDURE value_at_41 is begin
-		dataIn := to_unsigned(41, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(41, 6));
 		sv_check_value := to_unsigned(12, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -364,7 +364,7 @@ architecture arch of s1_box_test is
 	end value_at_41;
 
 	PROCEDURE value_at_42 is begin
-		dataIn := to_unsigned(42, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(42, 6));
 		sv_check_value := to_unsigned(9, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -372,7 +372,7 @@ architecture arch of s1_box_test is
 	end value_at_42;
 
 	PROCEDURE value_at_43 is begin
-		dataIn := to_unsigned(43, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(43, 6));
 		sv_check_value := to_unsigned(7, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -380,7 +380,7 @@ architecture arch of s1_box_test is
 	end value_at_43;
 
 	PROCEDURE value_at_44 is begin
-		dataIn := to_unsigned(44, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(44, 6));
 		sv_check_value := to_unsigned(3, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -388,7 +388,7 @@ architecture arch of s1_box_test is
 	end value_at_44;
 
 	PROCEDURE value_at_45 is begin
-		dataIn := to_unsigned(45, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(45, 6));
 		sv_check_value := to_unsigned(10, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -396,7 +396,7 @@ architecture arch of s1_box_test is
 	end value_at_45;
 
 	PROCEDURE value_at_46 is begin
-		dataIn := to_unsigned(46, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(46, 6));
 		sv_check_value := to_unsigned(5, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -404,7 +404,7 @@ architecture arch of s1_box_test is
 	end value_at_46;
 
 	PROCEDURE value_at_47 is begin
-		dataIn := to_unsigned(47, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(47, 6));
 		sv_check_value := to_unsigned(0, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -412,7 +412,7 @@ architecture arch of s1_box_test is
 	end value_at_47;
 
 	PROCEDURE value_at_48 is begin
-		dataIn := to_unsigned(48, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(48, 6));
 		sv_check_value := to_unsigned(15, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -420,7 +420,7 @@ architecture arch of s1_box_test is
 	end value_at_48;
 
 	PROCEDURE value_at_49 is begin
-		dataIn := to_unsigned(49, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(49, 6));
 		sv_check_value := to_unsigned(12, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -428,7 +428,7 @@ architecture arch of s1_box_test is
 	end value_at_49;
 
 	PROCEDURE value_at_50 is begin
-		dataIn := to_unsigned(50, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(50, 6));
 		sv_check_value := to_unsigned(8, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -436,7 +436,7 @@ architecture arch of s1_box_test is
 	end value_at_50;
 
 	PROCEDURE value_at_51 is begin
-		dataIn := to_unsigned(51, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(51, 6));
 		sv_check_value := to_unsigned(2, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -444,7 +444,7 @@ architecture arch of s1_box_test is
 	end value_at_51;
 
 	PROCEDURE value_at_52 is begin
-		dataIn := to_unsigned(52, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(52, 6));
 		sv_check_value := to_unsigned(4, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -452,7 +452,7 @@ architecture arch of s1_box_test is
 	end value_at_52;
 
 	PROCEDURE value_at_53 is begin
-		dataIn := to_unsigned(53, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(53, 6));
 		sv_check_value := to_unsigned(9, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -460,7 +460,7 @@ architecture arch of s1_box_test is
 	end value_at_53;
 
 	PROCEDURE value_at_54 is begin
-		dataIn := to_unsigned(54, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(54, 6));
 		sv_check_value := to_unsigned(1, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -468,7 +468,7 @@ architecture arch of s1_box_test is
 	end value_at_54;
 
 	PROCEDURE value_at_55 is begin
-		dataIn := to_unsigned(55, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(55, 6));
 		sv_check_value := to_unsigned(7, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -476,7 +476,7 @@ architecture arch of s1_box_test is
 	end value_at_55;
 
 	PROCEDURE value_at_56 is begin
-		dataIn := to_unsigned(56, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(56, 6));
 		sv_check_value := to_unsigned(5, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -484,7 +484,7 @@ architecture arch of s1_box_test is
 	end value_at_56;
 
 	PROCEDURE value_at_57 is begin
-		dataIn := to_unsigned(57, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(57, 6));
 		sv_check_value := to_unsigned(11, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -492,7 +492,7 @@ architecture arch of s1_box_test is
 	end value_at_57;
 
 	PROCEDURE value_at_58 is begin
-		dataIn := to_unsigned(58, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(58, 6));
 		sv_check_value := to_unsigned(3, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -500,7 +500,7 @@ architecture arch of s1_box_test is
 	end value_at_58;
 
 	PROCEDURE value_at_59 is begin
-		dataIn := to_unsigned(59, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(59, 6));
 		sv_check_value := to_unsigned(14, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -508,7 +508,7 @@ architecture arch of s1_box_test is
 	end value_at_59;
 
 	PROCEDURE value_at_60 is begin
-		dataIn := to_unsigned(60, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(60, 6));
 		sv_check_value := to_unsigned(10, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -516,7 +516,7 @@ architecture arch of s1_box_test is
 	end value_at_60;
 
 	PROCEDURE value_at_61 is begin
-		dataIn := to_unsigned(61, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(61, 6));
 		sv_check_value := to_unsigned(0, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -524,7 +524,7 @@ architecture arch of s1_box_test is
 	end value_at_61;
 
 	PROCEDURE value_at_62 is begin
-		dataIn := to_unsigned(62, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(62, 6));
 		sv_check_value := to_unsigned(6, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
@@ -532,13 +532,13 @@ architecture arch of s1_box_test is
 	end value_at_62;
 
 	PROCEDURE value_at_63 is begin
-		dataIn := to_unsigned(63, 6);
+		dataIn := STD_LOGIC_VECTOR(to_unsigned(63, 6));
 		sv_check_value := to_unsigned(13, 4); -- expected value
 		b_check <= true;         -- enable a check
 		wait for (100 ns);
 		b_check <= false;
 	end value_at_63;
-	
+
 	begin
 		value_at_0;
 		value_at_1;
