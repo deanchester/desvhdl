@@ -2,7 +2,7 @@ library ieee ;
 	use ieee.std_logic_1164.all ;
 	use ieee.numeric_std.all ;
 
-entity s1_box_test is
+entity s4_box_test is
 end entity ; -- s1_box_test
 
 architecture arch of s4_box_test is
