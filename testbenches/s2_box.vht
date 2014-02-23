@@ -2,10 +2,10 @@ library ieee ;
 	use ieee.std_logic_1164.all ;
 	use ieee.numeric_std.all ;
 
-entity s1_box_test is
+entity s2_box_test is
 end entity ; -- s1_box_test
 
-architecture arch of s1_box_test is
+architecture arch of s2_box_test is
 	component S2Box is
 		port (
 			sIN: IN std_logic_VECTOR(5 downto 0);
