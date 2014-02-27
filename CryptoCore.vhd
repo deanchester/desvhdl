@@ -4,7 +4,11 @@ library ieee ;
 
 entity CryptoCore is
   port (
-	clock
+	clock, start : IN STD_LOGIC;
+	algorithmSelect : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
+	textIn, key1, key2, key3 : IN STD_LOGIC_VECTOR(63 DOWNTO 0);
+	done : OUT STD_LOGIC;
+	textOut : OUT STD_LOGIC_VECTOR(63 DOWNTO 0	)
   ) ;
 end entity ; -- CryptoCore
 
@@ -27,11 +31,11 @@ architecture arch of CryptoCore is
 	end COMPONENT;
 	
 	COMPONENT KeyStore is
-	  port (
-		clock : IN STD_LOGIC;
-		keyIn : IN STD_LOGIC_VECTOR(63 DOWNTO 0);
-		keyOut : OUT STD_LOGIC_VECTOR(63 DOWNTO 0)
-	  ) ;
+		port (
+			clock : IN STD_LOGIC;
+			keyIn : IN STD_LOGIC_VECTOR(63 DOWNTO 0);
+			keyOut : OUT STD_LOGIC_VECTOR(63 DOWNTO 0)
+		) ;
 	end COMPONENT;
 	
 	COMPONENT Mux64 is
