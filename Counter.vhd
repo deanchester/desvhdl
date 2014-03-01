@@ -15,7 +15,7 @@ begin
 	process(clock, reset)
 	begin
 		if reset='1' then
-			temp <= "0000";
+			temp <= "00";
 		elsif(clock'event and clock='1') then
 			temp <= temp + 1;
 		end if;
