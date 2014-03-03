@@ -79,6 +79,7 @@ begin
 			when STD_LOGIC_VECTOR(to_unsigned(61,6)) => sOUT <= STD_LOGIC_VECTOR(to_unsigned(6, 4));
 			when STD_LOGIC_VECTOR(to_unsigned(62,6)) => sOUT <= STD_LOGIC_VECTOR(to_unsigned(8, 4));
 			when STD_LOGIC_VECTOR(to_unsigned(63,6)) => sOUT <= STD_LOGIC_VECTOR(to_unsigned(11, 4));
+			when others =>  sOUT <= "0000";
 		end case;
 	end process;
 end architecture;
