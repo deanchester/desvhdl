@@ -54,7 +54,7 @@ begin
 			sr29Out <= key15In;
 			sr31Out <= key16In;
 			keyOut <= sr1Out;
-		if (clock'EVENT AND clock='1' AND load='1' AND decryption='1') then
+		elsif (clock'EVENT AND clock='1' AND load='1' AND decryption='1') then
 			sr1Out <= key16In;
 			sr3Out <= key15In;
 			sr5Out <= key14In;
